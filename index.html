@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="cursor-glow"></div>
+
+    <!-- ======= Navbar ======= -->
+    <header id="header">
+        <nav class="navbar">
+          
+            <div class="logo"><img src="assets/images/logo.jpg" alt="Logo"><h4>Samin's Portfolio</h4></div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" role="button" aria-label="Toggle navigation" aria-expanded="false">☰</div>
+        </nav>
+    </header>
+
+    <!-- ======= Hero Section ======= -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+      <h1>Hi, I'm <span id="work">Samin</h1></span>
+      <h2><span id="element"></span></h2>
+      <div class="cta-buttons">
+      <a href="project.html" class="btn">View Work</a>
+      <a href="#contact" class="btn-outline">Hire Me</a>
+      </div>
+      </div>
+      <div class="hero-img">
+        <div class="hero-frame">
+            <img src="assets/images/hero.png" alt="Hero Image">
+        </div>
+    </div>
+    
+      </section>
+      <section id="services" class="services">
+       
+        <h2>Services</h2>
+        <div class="service-container">
+        <div class="service-card">
+        <h3>Web Development</h3>
+        <p>Responsive and modern websites for businesses & individuals.</p>
+        </div>
+        <div class="service-card">
+        <h3>Custom Software Tools</h3>
+        <p>Automation tools, dashboards, and smart utilities.</p>
+        </div>
+        <div class="service-card">
+        <h3>Backend Systems</h3>
+        <p>APIs, databases, and secure authentication flows.</p>
+        </div>
+        <div class="service-card">
+        <h3>UI/UX Design</h3>
+        <p>Clean, user-friendly designs focused on simplicity.</p>
+        </div>
+        </div>
+        </section>
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <h2>Introduction</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm Samin Saikia, a web and software developer who builds clean, fast, and reliable digital solutions. I work with <span id="skill">HTML, CSS, JavaScript, Python, Flask , Node js , React js , SQLite , MySQL and Mongo db </span> to create <span id="work">websites, dashboards, authentication systems, custom softwares, utility tools.</span>
+                  I focus on understanding client problems and delivering simple, effective solutions with smooth communication and on-time results</p>
+            </div>
+            <div class="about-img">
+              <div class="intro-frame">
+              <img src="assets/images/intro.jpg" alt="Hero Image">
+            </div>
+          </div>  
+          </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+            <form action="https://api.web3forms.com/submit" class="contact-form" method="POST">
+            <input type="hidden" name="access_key" value="ea9039b2-5e92-4d28-a279-49f556a2c0e1">
+            <input type="text" placeholder="Your Name" required name="name">
+            <input type="email" placeholder="Your Email" required name="email">
+            <textarea placeholder="Your Message" required name="message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+
+            
+        </form>
+    </section>
+
+    <!-- ======= Footer ======= -->
+    <footer>
+        <p>© 2025 Samin Saikia. All Rights Reserved.</p>
+        
+    </footer>
+
+    <!-- ======= Inline Interactive JS (DOM ready safe) ======= -->
+<!-- REPLACE your existing script with this block -->
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // ======= Auto add reveal class for key sections (if not present) =======
+      // Add .reveal to elements we want animated (do this before setting up the observer)
+      const autoRevealSelectors = ['header', '.hero', '#services .service-card', '#projects .project-card', '#about', '#contact'];
+      autoRevealSelectors.forEach(sel => {
+        document.querySelectorAll(sel).forEach(el => {
+          if (!el.classList.contains('reveal')) el.classList.add('reveal');
+        });
+      });
+    
+      // ======= Mobile Navigation =======
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      let navOpen = false;
+    
+      function openMobileNavStyles() {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'fixed';
+        navLinks.style.top = '80px';
+        navLinks.style.right = '18px';
+        navLinks.style.background = 'rgba(2,6,20,0.86)';
+        navLinks.style.padding = '18px';
+        navLinks.style.borderRadius = '12px';
+        navLinks.style.boxShadow = '0 12px 40px rgba(2,8,23,0.6)';
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+      function closeMobileNavStyles() {
+        navLinks.removeAttribute('style');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    
+      function toggleNav() {
+        // Only toggle mobile-style menu when viewport is mobile-sized
+        if (window.innerWidth > 720) {
+          // for larger screens, ensure menu is shown with default CSS
+          closeMobileNavStyles();
+          navOpen = false;
+          return;
+        }
+        navOpen = !navOpen;
+        if (navOpen) openMobileNavStyles();
+        else closeMobileNavStyles();
+      }
+    
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', toggleNav);
+        // close when clicking a nav link (mobile)
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          if (window.innerWidth <= 720 && navOpen) toggleNav();
+        }));
+      }
+    
+      // Accessibility: close nav on ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navOpen) toggleNav();
+      });
+    
+      // Ensure nav resets on resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 720 && navOpen) toggleNav();
+      });
+    
+      // ======= Reveal on Scroll (IntersectionObserver) =======
+      // Re-query reveals AFTER we've added the auto reveal classes
+      const reveals = document.querySelectorAll('.reveal');
+    
+      if ('IntersectionObserver' in window && reveals.length) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+    
+        reveals.forEach(r => obs.observe(r));
+      } else {
+        // fallback: reveal all immediately
+        reveals.forEach(r => r.classList.add('show'));
+      }
+    
+      // ======= Smooth scrolling for anchor links =======
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href').slice(1);
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const top = targetEl.getBoundingClientRect().top + window.scrollY - 18;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
+      });
+    
+      // ======= Cursor Glow =======
+      const glow = document.createElement('div');
+      glow.className = 'cursor-glow';
+      document.body.appendChild(glow);
+    
+      let mouseX = -9999;
+      let mouseY = -9999;
+      let glowX = 0;
+      let glowY = 0;
+      let visible = false;
+      let fadeTimeout = null;
+    
+      function onMove(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!visible) {
+          glow.style.opacity = '1';
+          visible = true;
+        }
+        if (fadeTimeout) clearTimeout(fadeTimeout);
+        fadeTimeout = setTimeout(() => { glow.style.opacity = '0'; visible = false; }, 1200);
+      }
+    
+      function animateGlow() {
+        glowX += (mouseX - glowX) * 0.12;
+        glowY += (mouseY - glowY) * 0.12;
+        glow.style.left = glowX + 'px';
+        glow.style.top = glowY + 'px';
+        requestAnimationFrame(animateGlow);
+      }
+    
+      window.addEventListener('pointermove', onMove);
+      window.addEventListener('pointerdown', () => {
+        glow.style.transform = 'translate(-50%,-50%) scale(0.9)';
+        setTimeout(() => glow.style.transform = 'translate(-50%,-50%) scale(1)', 150);
+      });
+      animateGlow();
+      
+
+    });
+    </script>
+   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> 
+   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+   <script>
+    var typed = new Typed('#element', {
+      strings: ['Open Source github Contributor','Full stack web developer' , 'Softoware developer',],
+      typeSpeed: 150,
+    });
+  </script>
+</body>
+</html>

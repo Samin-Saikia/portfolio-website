@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>about</title>
+</head>
+<body>
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo"><img src="assets/images/logo.jpg" alt="Logo"></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" role="button" aria-label="Toggle navigation" aria-expanded="false">☰</div>
+        </nav>
+    </header>
+
+    <!-- Resume PDF Section -->
+    <section id="pdf-section">
+        <h2>My Resume</h2>
+
+        <div class="pdf-buttons">
+            <a href="assets/pdf/resume.pdf" target="_blank">
+                <button id="btn">View PDF</button>
+            </a>
+
+            <a href="assets/pdf/resume.pdf" download>
+                <button id="btn">Download PDF</button>
+            </a>
+        </div>
+
+        <!-- PDF Preview -->
+        <iframe 
+            src="assets/pdf/resume.pdf" 
+            width="100%" 
+            height="500px">
+        </iframe>
+    </section>
+
+</body>
+</html>
