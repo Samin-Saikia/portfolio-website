@@ -32,23 +32,7 @@ Designed with a premium dark-blue aesthetic, smooth animations, and interactive 
 
 ---
 
-## 📂 Project Structure
 
-project/
-│── index.html
-│── about.html
-│── css/
-│ └── style.css
-│── js/
-│ └── script.js
-│── assets/
-│ ├── images/
-│ └── icons/
-
-yaml
-Copy code
-
----
 
 ## 🧠 What I Built & Learned
 
@@ -67,10 +51,3 @@ This project serves as:
 - A base template for client projects
 - A demonstration of modern frontend UI/UX practices
 
----
-
-## 🚀 How to Use
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Samin-Saikia/portfolio-website.git
